@@ -27,7 +27,7 @@ end
 
 local function inv_change(pos, count, player)
 	local meta = minetest.get_meta(pos)
-	if not minetest.is_protected(pos, player:get_player_name()) then
+	if minetest.is_protected(pos, player:get_player_name()) then
 		minetest.log("action", player:get_player_name()..
 			" tried to access a locked chest belonging to "..
 			meta:get_string("owner").." at "..
